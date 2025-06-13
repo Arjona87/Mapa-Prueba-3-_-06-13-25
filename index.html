@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Interactiva</title>
+    <link rel="stylesheet" href="./style_refined.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- SheetJS (xlsx) CDN -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Plataforma Interactiva</h1>
+        <nav>
+            <ul>
+                <li><a href="#graficas">Gráficas</a></li>
+                <li><a href="#mapa">Mapa Dinámico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="graficas">
+            <h2>Sección de Gráficas</h2>
+            <div class="chart-container">
+                <h3>Incidentes por Municipio</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Tendencia Anual de Incidentes</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+        </section>
+
+        <section id="mapa">
+            <h2>Sección de Mapa Dinámico</h2>
+            <div class="map-controls">
+                <input type="file" id="xlsxFileInput" accept=".xlsx, .xls">
+                <button id="loadXLSX">Cargar Puntos desde XLSX</button>
+                <button id="downloadExample">Descargar Ejemplo XLSX</button>
+            </div>
+            <div id="mapid"></div>
+            <div class="map-info">
+                <h3>Instrucciones para el archivo XLSX:</h3>
+                <ul>
+                    <li>El archivo debe contener columnas con nombres como: <strong>Latitud, Longitud, Nombre, Descripción, Categoría</strong></li>
+                    <li>Las coordenadas deben estar en formato decimal (ej: 20.6597, -103.3496)</li>
+                    <li>Las categorías pueden ser: seguridad, salud, educacion, transporte, turismo, general</li>
+                    <li>Descarga el archivo de ejemplo para ver el formato correcto</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Plataforma Interactiva. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="./script_refined.js"></script>
+</body>
+</html>
+

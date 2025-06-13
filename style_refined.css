@@ -1,0 +1,799 @@
+/*
+ * PLATAFORMA INTERACTIVA - ARCHIVO DE ESTILOS CSS
+ * 
+ * Este archivo contiene todos los estilos para la plataforma web interactiva
+ * que incluye secciones de gráficas y mapa dinámico.
+ * 
+ * Estructura:
+ * 1. Estilos generales y reset
+ * 2. Header y navegación
+ * 3. Contenido principal
+ * 4. Sección de gráficas
+ * 5. Sección de mapa dinámico
+ * 6. Footer
+ * 7. Responsividad (Media Queries)
+ */
+
+/* ===== 1. ESTILOS GENERALES Y RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== 2. HEADER Y NAVEGACIÓN ===== */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(52, 73, 94, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* ===== 3. CONTENIDO PRINCIPAL ===== */
+main {
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+/* ===== 4. SECCIÓN DE GRÁFICAS ===== */
+.chart-container {
+    position: relative;
+    margin: 30px auto;
+    height: 450px;
+    width: 90%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.chart-container:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* ===== 5. SECCIÓN DE MAPA DINÁMICO ===== */
+#mapid {
+    height: 600px;
+    width: 100%;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.map-controls {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.map-controls input[type="file"] {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.map-controls input[type="file"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.map-controls button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.map-info {
+    background: linear-gradient(145deg, #e3f2fd 0%, #f1f8ff 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #2196f3;
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.1);
+}
+
+.map-info h3 {
+    margin-top: 0;
+    color: #1565c0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.map-info ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.map-info li {
+    margin-bottom: 8px;
+    color: #424242;
+    font-size: 0.95rem;
+}
+
+.map-info strong {
+    color: #1565c0;
+    font-weight: 600;
+}
+
+/* ===== 6. BOTONES ===== */
+button {
+    background: linear-gradient(145deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #2980b9 0%, #1f5f8b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+button#downloadExample {
+    background: linear-gradient(145deg, #27ae60 0%, #229954 100%);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+}
+
+button#downloadExample:hover {
+    background: linear-gradient(145deg, #229954 0%, #1e8449 100%);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* ===== 7. FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* ===== 8. RESPONSIVIDAD (MEDIA QUERIES) ===== */
+@media (max-width: 768px) {
+    /* Navegación móvil */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Contenido principal móvil */
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Gráficas móvil */
+    .chart-container {
+        width: 100%;
+        height: 350px;
+        padding: 15px;
+    }
+
+    /* Mapa móvil */
+    #mapid {
+        height: 400px;
+    }
+
+    .map-controls {
+        padding: 15px;
+    }
+
+    .map-controls input[type="file"] {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        min-width: auto;
+    }
+
+    .map-controls button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .map-info {
+        padding: 15px;
+    }
+
+    .map-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .map-info li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px 10px;
+    }
+
+    .chart-container {
+        height: 300px;
+        padding: 10px;
+    }
+
+    #mapid {
+        height: 350px;
+    }
+}
+
+/* ===== 9. ANIMACIONES Y EFECTOS ADICIONALES ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Efectos de hover para las secciones */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+/* Estilos para elementos de Leaflet personalizados */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Indicador de carga (opcional para futuras mejoras) */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/*
+ * PLATAFORMA INTERACTIVA - ARCHIVO DE ESTILOS CSS
+ * 
+ * Este archivo contiene todos los estilos para la plataforma web interactiva
+ * que incluye secciones de gráficas y mapa dinámico.
+ * 
+ * Estructura:
+ * 1. Estilos generales y reset
+ * 2. Header y navegación
+ * 3. Contenido principal
+ * 4. Sección de gráficas
+ * 5. Sección de mapa dinámico
+ * 6. Footer
+ * 7. Responsividad (Media Queries)
+ */
+
+/* ===== 1. ESTILOS GENERALES Y RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== 2. HEADER Y NAVEGACIÓN ===== */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(52, 73, 94, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* ===== 3. CONTENIDO PRINCIPAL ===== */
+main {
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+/* ===== 4. SECCIÓN DE GRÁFICAS ===== */
+.chart-container {
+    position: relative;
+    margin: 30px auto;
+    height: 450px;
+    width: 90%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.chart-container:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* ===== 5. SECCIÓN DE MAPA DINÁMICO ===== */
+#mapid {
+    height: 600px;
+    width: 100%;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.map-controls {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.map-controls input[type="file"] {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.map-controls input[type="file"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.map-controls button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.map-info {
+    background: linear-gradient(145deg, #e3f2fd 0%, #f1f8ff 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #2196f3;
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.1);
+}
+
+.map-info h3 {
+    margin-top: 0;
+    color: #1565c0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.map-info ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.map-info li {
+    margin-bottom: 8px;
+    color: #424242;
+    font-size: 0.95rem;
+}
+
+.map-info strong {
+    color: #1565c0;
+    font-weight: 600;
+}
+
+/* ===== 6. BOTONES ===== */
+button {
+    background: linear-gradient(145deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #2980b9 0%, #1f5f8b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+button#downloadExample {
+    background: linear-gradient(145deg, #27ae60 0%, #229954 100%);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+}
+
+button#downloadExample:hover {
+    background: linear-gradient(145deg, #229954 0%, #1e8449 100%);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* ===== 7. FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* ===== 8. RESPONSIVIDAD (MEDIA QUERIES) ===== */
+@media (max-width: 768px) {
+    /* Navegación móvil */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Contenido principal móvil */
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Gráficas móvil */
+    .chart-container {
+        width: 100%;
+        height: 350px;
+        padding: 15px;
+    }
+
+    /* Mapa móvil */
+    #mapid {
+        height: 400px;
+    }
+
+    .map-controls {
+        padding: 15px;
+    }
+
+    .map-controls input[type="file"] {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        min-width: auto;
+    }
+
+    .map-controls button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .map-info {
+        padding: 15px;
+    }
+
+    .map-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .map-info li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px 10px;
+    }
+
+    .chart-container {
+        height: 300px;
+        padding: 10px;
+    }
+
+    #mapid {
+        height: 350px;
+    }
+}
+
+/* ===== 9. ANIMACIONES Y EFECTOS ADICIONALES ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Efectos de hover para las secciones */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+/* Estilos para elementos de Leaflet personalizados */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Indicador de carga (opcional para futuras mejoras) */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
